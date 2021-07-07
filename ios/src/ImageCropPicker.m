@@ -873,8 +873,8 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
             cropVC = [[TOCropViewController alloc] initWithCroppingStyle:TOCropViewCroppingStyleCircular image:image];
         } else {
             cropVC = [[TOCropViewController alloc] initWithImage:image];
-            CGFloat widthRatio = [[self.options objectForKey:@"width"] floatValue];
-            CGFloat heightRatio = [[self.options objectForKey:@"height"] floatValue];
+            CGFloat widthRatio = image.size.width;
+            CGFloat heightRatio = image.size.height;
             if (widthRatio > 0 && heightRatio > 0){
                 CGSize aspectRatio = CGSizeMake(widthRatio, heightRatio);
                 cropVC.customAspectRatio = aspectRatio;
